@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/80fda925ab.js" crossorigin="anonymous"></script>
 </head>
-<link rel="stylesheet" href="style.css">
+
 <body>
     <div id="header">
         <div class="container">
@@ -25,25 +27,122 @@
             </div>
         </div>
     </div>
+
+
 <!-- --------about-------- -->
     <div id="about">
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="images/Me.png">
+                    <img src="images/User.jpg">
                 </div>
                 <div class="about-col-2">
                     <h1 class="subtitle">About Me</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                     <div class="tab-titles">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p> 
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>Skill 1</span><br>Description 1</li>
+                            <li><span>Skill 2</span><br>Description 2</li>
+                            <li><span>Skill 3</span><br>Description 3</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li><span>Experience 1</span><br>Description 1</li>
+                            <li><span>Experience 2</span><br>Description 2</li>
+                            <li><span>Experience 3</span><br>Description 3</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2025</span><br>M.Tech from NIT Karnataka</li>
+                            <li><span>2021</span><br>B.Tech from GCE Karad</li>
+                            <li><span>2020</span><br>Higher Secondary Certificate</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- ---------------services-------------- -->
+     <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2> Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi ipsa alias eaque cum ipsam sequi. Dolores voluptatum odio animi earum, commodi temporibus soluta reiciendis voluptatibus iusto eos illo maiores molestias?.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2> App Design</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas asperiores, quibusdam facilis harum id non magni natus ad aut temporibus consectetur atque modi incidunt accusamus possimus aliquid deserunt! Deserunt, debitis..</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+     </div>
+
+<!-- -------------portfolio--------------- -->
+ <div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle"> My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h3>Social Media App</h3>
+                    <p>The App connects you to differnet people around the world. Download it from play store.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h3>Music App</h3>
+                    <p>The App connects you to differnet people around the world. Download it from play store.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png">
+                <div class="layer">
+                    <h3>Online Shopping App</h3>
+                    <p>The App connects you to differnet people around the world. Download it from play store.</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+ </div>
     
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 </body>
 </html>
